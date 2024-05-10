@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@prisma/client": "^5.13.0",
+    "@trpc/server": "^10.45.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "prisma": "^5.13.0",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "db:migrate": "npx prisma migrate dev --name note-entity --create-only && yarn prisma generate",
+    "db:push": "npx prisma db push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.11"
+  }
+}
